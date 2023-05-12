@@ -49,20 +49,18 @@ All classes should also keep track of `all` members using a class variable.
   string that represents the date when the contract was signed, while the
   royalties property should be a number that represents the percentage of
   royalties that the author will receive for the book.
+  - All setters should `raise Exception` upon failure.
 
 The `Author` class should have the following methods:
 
-- `sign_contract(book, date, royalties)`: This method should create a new
-  Contract object between the author and the specified book with the specified
-  date and royalties
-
+- `contracts(self)`: This method should return a list of related contracts.
+- `books(self)`: This method should return a list of related books using the
+  `Contract` class as an intermediary.
+- `sign_contract(book, date, royalties)`: This method should create and return a
+  new `Contract` object between the author and the specified book with the
+  specified date and royalties
 - `total_royalties()`: This method should return the total amount of royalties
   that the author has earned from all of their contracts.
-
-The `Book` class should have the following methods:
-
-- `add_author`(author): This method should add the specified Author object to
-  the book's authors set. Add validation for the Author object.
 
 The `Contract` class should have the following methods:
 
